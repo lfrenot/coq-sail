@@ -81,7 +81,7 @@ Lemma word_to_bools_length : forall [n] (w : word n), List.length (word_to_bools
 intros.
 unfold word_to_bools.
 rewrite List.rev_length.
-rewrite bv_to_bits_length.
+rewrite length_bv_to_bits.
 apply Nnat.Nat2N.id.
 Qed.
 
@@ -127,7 +127,7 @@ rewrite nth_error_lookup.
 intro H.
 rewrite nth_error_rev.
 rewrite List.rev_involutive, List.rev_length.
-rewrite bv_to_bits_length.
+rewrite length_bv_to_bits.
 rewrite Nnat.Nat2N.id in *.
 rewrite H.
 firstorder.
